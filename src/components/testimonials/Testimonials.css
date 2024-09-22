@@ -1,0 +1,66 @@
+.testimonials {
+  padding: 20px 20px;
+  margin: 10px;
+  background-color: white;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.testimonials h3 {
+  font-size: 1.3em;
+  margin-bottom: 20px;
+  color: rgb(79, 77, 77);
+  padding: 10px;
+}
+.testimonials-container {
+  display: flex;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  padding: 10px;
+  scroll-snap-type: x mandatory;
+}
+
+.testimonials blockquote {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 0 0 auto;
+  margin: 0 20px;
+  font-style: italic;
+  max-width: 300px;
+  padding: 20px;
+  background-color: #e7f3ff;
+  border-left: 5px solid #007bff; /* Blue left border */
+  border-radius: 5px;
+  scroll-snap-align: start;
+}
+
+.testimonials blockquote footer {
+  width: 100%;
+  text-align: center;
+  align-self: flex-end; /* Ensure footer stays at the bottom */
+  padding: 10px 0;
+  margin-top: 20px;
+  font-style: normal;
+  font-weight: bold;
+  background-color: #111212;
+  color: white;
+  border-radius: 0 0 5px 5px;
+}
+
+.testimonials-container::-webkit-scrollbar {
+  height: 0px; /* Reduce the height of the horizontal scrollbar */
+}
+
+/* Ensure blockquotes are centered on smaller screens */
+@media (max-width: 768px) {
+  .testimonials blockquote {
+    flex: 1 1 calc(50% - 40px); /* 2 per row on medium screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .testimonials blockquote {
+    flex: 1 1 100%; /* 1 per row on small screens */
+  }
+}
